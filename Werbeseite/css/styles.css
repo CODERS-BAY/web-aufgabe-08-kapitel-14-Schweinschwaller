@@ -1,0 +1,216 @@
+/*  Farbpalette
+    https://flatuicolors.com/palette/de
+*/
+html {
+    box-sizing: border-box;
+    background-color: #283681;
+    color: white;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+body{
+    font-size: 120%;
+}
+
+/* #region header */
+.headerbanner h1{
+    font-size: 600%;
+    font-style: italic;
+    font-weight: bold;
+
+    color: white;
+    text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.6);
+    text-align: left;
+    text-transform: uppercase;
+    line-height: 1.1rem;
+    letter-spacing: 0.1rem;
+    word-spacing: 1rem;
+
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    margin-left: 5%;
+    border: 0rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+
+    display: inline-block;
+    width: 30rem;
+}
+
+.headerbanner h1::first-letter{
+    color: red;
+}
+
+.headerbanner {
+    background-image: url(https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1200px-Flag_of_the_United_States.svg.png);
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-attachment: srcoll;
+    background-size: contain;
+}
+/* #endregion header */
+
+/* #region main */
+main{
+    margin: auto;
+    display: flex;
+    max-width: 80%;
+}
+
+main img{
+    width: auto;
+    height: auto;
+    max-width: 400px;
+    max-height: 400px;
+    float: left;
+    margin-right: 1rem;
+}
+
+main strong{
+    font-size: 120%;
+}
+
+main u{
+    text-decoration: inherit;
+}
+
+.maga{
+    font-size: 120%;
+    text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.6);
+}
+
+.DepTrump{
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+}
+
+.AEgale{
+    /*wenn ich das bild links haben will dann kann ich es so Spiegeln*/
+    /*transform: scale(-1);
+    transform: rotateY(180deg);*/
+
+    background: transparent;
+    float: right;
+    margin-right: 0.5rem;
+    border-radius: 10%;
+    shape-outside: ellipse(167px closest-side at 138px 194px);
+    shape-margin: 0.5rem;
+}
+
+.maga{
+    background-color: #283681;
+}
+/* #region copiert vom W3schools*/
+/* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_flip_image2
+   anschließend selbst modifiziert damit beim Flip ein anderes Bild angezeigt wird*/
+/* HTML code 
+    <div class="flip-box">
+        <div class="flip-box-inner">
+            <div class="flip-box-front">
+                <img src="A" class="imgInTxt">
+            </div>
+            <div class="flip-box-back">
+                <img src="B.png" class="flag">
+            </div>
+        </div>
+    </div>
+*/
+.flip-box {
+    margin: auto;                           /* platziert das bild(flip-box) in der mitte der seite*/
+    perspective: 1000px;                    /* gibt die distanz zu user an. bei kleinen wert geht die animation weiter zum user*/
+    width: auto;                            /* breite wird automatisch gemacht*/
+    height: 13rem;                          /* festlegen der höhe*/
+    max-width: 400px;                       /* die maximale größe der Box mit den bildern */
+    max-height: 400px;                      
+}
+.flip-box-inner {
+    width: 100%;                            /* damit die vorderseite den ganzen platz der flipbox einnimmt*/ 
+    height: 100%;
+    transition: transform 0.5s;             /* die Geschwindigkeit wie schnell das vorder grundbild flipt */
+    transform-style: preserve-3d;           /* der style wie die flip animation ausschaut*/
+}
+.flip-box:hover .flip-box-inner {
+    transform: rotateY(180deg);             /* wenn man mit der mouse drauffährt(hover) auf die inner Box, welche die größe von der flip box hat dann dreht sich das Bild um. (180°)*/
+}
+.flip-box-front, 
+.flip-box-back {
+    position: absolute;                     /* die position der rückseite genau hinter dem vorderseiten Bild*/
+    width: 100%;                            /* damit die rückseite die den ganzen platz der vorderseite einnimmt*/                                                      
+    height: 100%;
+    backface-visibility: hidden;            /* dadurch wird die rückseite, in diesen fall die Fahne versteckt*/
+}
+.flip-box-back {
+    transform: rotateY(180deg);             /* da das bild gedreht wird muss es um 180° gedreht sein damit es dann nach der animation normal dasteht*/
+}
+/* #endregion copiert vom W3schools*/
+
+.columnIpsum{
+    display: flex;
+}
+.columnIpsum p{
+    width: 45%;
+
+}
+.columnIpsum p:first-child{
+    margin-right: 2%;
+    text-align: center;
+}
+
+.columnIpsum p:last-child{
+    margin-left: 2%;
+    text-align: center;
+}
+
+/* #endregion main*/
+
+/* #region footer */
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+/* #endregion footer */
+
+/* #region Werbeseite*/
+
+/* #endregion Werbeseite*/
+
+/* #region MOBILE */
+@media only screen and (max-width: 745px){
+    /* #region main */
+    main{
+        display: block;
+        max-width: 99%;
+    }
+    main img{
+        float: inherit;
+    }
+    .headerbanner h1{
+        font-size: 400%;
+    }
+    .headerbanner {
+        background-image: none;
+    }
+    .AEgale{
+        shape-outside: inherit;
+        float: none;
+    }
+    .flip-box img{
+        width: 100%;
+    }
+    .columnIpsum{
+        display: block;
+    }
+    .columnIpsum p{
+        width: 95%;
+    }
+    footer{
+        position: relative;
+    }
+    /* #endregion main*/
+}
+/* #endregion MOBILE */
