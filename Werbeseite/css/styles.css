@@ -95,7 +95,8 @@ main u{
     float: right;
     margin-right: 0.5rem;
     border-radius: 10%;
-    shape-outside: ellipse(167px closest-side at 138px 194px);
+    shape-outside: polygon(34px 49px, 45px 10px, 84px 356px, 33px 336px, 81px 272px, 43px 171px);
+    /*shape-outside: ellipse(167px closest-side at 138px 194px);*/
     shape-margin: 0.5rem;
 }
 
@@ -147,22 +148,15 @@ main u{
 /* #endregion copiert vom W3schools*/
 
 .columnIpsum{
-    display: flex;
-}
-.columnIpsum p{
-    width: 45%;
-
+    width: 100%;
+      margin: auto;
+      -webkit-column-width: 22rem;
+      column-width: 22rem;
+    margin-top: 1rem;
 }
 .columnIpsum p:first-child{
-    margin-right: 2%;
-    text-align: center;
+    margin: 0;
 }
-
-.columnIpsum p:last-child{
-    margin-left: 2%;
-    text-align: center;
-}
-
 /* #endregion main*/
 
 /* #region footer */
@@ -173,10 +167,6 @@ footer{
     width: 100%;
 }
 /* #endregion footer */
-
-/* #region Werbeseite*/
-
-/* #endregion Werbeseite*/
 
 /* #region MOBILE */
 @media only screen and (max-width: 745px){
